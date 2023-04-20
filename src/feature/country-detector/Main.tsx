@@ -5,7 +5,7 @@ const CountryDisplay: React.FC = (): JSX.Element => {
   const { isLoading, country } = useCountryDetector();
 
   const Case = {
-    isLoding: <div>Loading...</div>,
+    isLoading: <div>Loading...</div>,
     successful: (
       <div>
         <p>Your Current Country is: {country ?? 'unknown'}</p>
@@ -15,7 +15,7 @@ const CountryDisplay: React.FC = (): JSX.Element => {
   }
 
   let componentToRender;
-  if (isLoading) componentToRender = Case.isLoding;
+  if (isLoading) componentToRender = Case.isLoading;
   else componentToRender = country && country ? Case.successful : Case.NotFound
 
   return (
